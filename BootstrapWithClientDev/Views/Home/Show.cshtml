@@ -1,0 +1,76 @@
+﻿@model IEnumerable<BootstrapWithClientDev.Models.Employee>
+
+@{
+    ViewBag.Title = "Show";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h2>Show</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Register")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ename)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.salary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeptID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ename)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.salary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeptID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Eid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Eid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Eid })
+        </td>
+    </tr>
+}
+
+</table>

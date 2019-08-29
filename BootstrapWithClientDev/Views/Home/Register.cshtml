@@ -1,0 +1,100 @@
+﻿@model BootstrapWithClientDev.Models.Employee
+@{
+    Layout = "~/Views/Shared/_LayoutFreeLancer.cshtml";
+}
+
+@using(Html.BeginForm())
+{
+    <div style=" background-image: linear-gradient(-90deg, blue,white);">
+
+        <div class="col-sm-12" style="border: 1px solid #000;width:400px;text-align:center;margin: 50px auto;padding:30px;">
+            <div class="col-sm-12" style="text-align:center;">
+                @*<h4 style="font-weight:900;margin-top:20px;">REGISTER EMPLOYEE</h4>*@
+                <img src="~/images/emp.png" class="img-rounded" style="width: 80px;border: 2px solid #000;border-radius: 42px;padding: 10px;" />
+            </div>
+
+            <div class="col-md-12">
+                <label for="email" style="float:left;">Employee Name</label>
+            </div>
+            <div class="form-group  col-md-12">
+
+                
+                @Html.TextBoxFor(m => m.Ename, new { @class = "form-control", @placeholder = "Enter Employee Name" })
+                    @Html.ValidationMessageFor(model => model.Ename, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-12">
+                <label for="pwd" style="float:left;">Password:</label>
+            </div>
+            <div class="form-group col-md-12">
+                
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Enter Password" })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+            @*<div class="form-group col-md-12">
+                   <input type="password" id="txtCPwd" name="txtCPwd" class="form-control" placeholder="Enter ConfirmPassword" />
+                  @*  @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", @placeholder = "Enter ConfirmPassword" })
+                </div>*@
+
+            <div class="form-group col-md-12">
+                <label for="Gender" style="float:left;">Gender:</label>
+            </div>
+
+            <div class="col-md-12 form-group">
+                @Html.RadioButtonFor(m => m.Gender, "Male", new { @class = "form" })Male
+                    @Html.RadioButtonFor(m => m.Gender, "FeMale", new { @class = "form" })Female
+                    @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                
+            </div>
+
+            <div class="col-md-12">
+                <label for="pwd" style="float:left;">Phone:</label>
+            </div>
+            <div class="form-group col-md-12">
+                
+                @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", @placeholder = "Enter PhoneNumber" })
+                    @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-12">
+                <label for="pwd" style="float:left;">Email:</label>
+            </div>
+            <div class="form-group col-md-12">
+              
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Enter Email" })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-12">
+                <label for="pwd" style="float:left;">Salary:</label>
+            </div>
+            <div class="form-group col-md-12">
+               
+                @Html.TextBoxFor(m => m.salary, new { @class = "form-control", @placeholder = "Enter Salary" })
+                    @Html.ValidationMessageFor(model => model.salary, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-12">
+                <label for="pwd" style="float:left;">Address:</label>
+            </div>
+            <div class="form-group col-md-12">
+               
+                @Html.TextAreaFor(m => m.Address, new { @class = "form-control", @placeholder = "Enter Address" })
+                    @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-12">
+                <label for="pwd" style="float:left;">Department:</label>
+            </div>
+            <div class="form-group col-md-12">
+                @Html.DropDownListFor(m => m.DeptID, new SelectList(ViewBag.DeptNo, "DeptID", "Dname"), "--select--", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.DeptID, "", new { @class = "text-danger" })
+               
+                <div class="col-md-12 form-group">
+                    <input type="submit" id="btnRegister" name="Register" value="Register" class="btn btn-primary" style="float:left;margin-bottom:20px;" />
+                    <input type="submit" id="btnCancel" name="Register" value="Cancel" class="btn btn-danger" style="float:left;margin-left:10px;margin-bottom:20px;" />
+                </div>
+            </div>
+        </div>
+
+    </div>
+}

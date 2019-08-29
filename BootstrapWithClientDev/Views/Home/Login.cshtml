@@ -1,0 +1,39 @@
+﻿@model BootstrapWithClientDev.Models.LoginModel
+@{
+    Layout = "~/Views/Shared/_LayoutFreeLancer.cshtml";
+}
+      @using (Html.BeginForm())
+            {
+                <div style=" background-image: linear-gradient(-90deg, white,brown);">
+                    <div class="col-sm-12" style="border: 1px solid #000;width:400px;text-align:center;margin: 50px auto;padding:30px;">
+                        <div class="col-sm-12" style="text-align:center;">
+                            <h4 style="font-weight:900;margin-top:20px;">EMPLOYEE LOGIN</h4>
+                            <img src="~/images/emp.png" class="img-rounded" style="width: 80px;border: 2px solid #000;border-radius: 42px;padding: 10px;" />
+                        </div>
+                        <form action="">
+                            <div class="col-md-12">
+                                <label for="email" style="float:left;">Email Address:</label>
+                            </div>
+                            <div class="form-group  col-md-12">
+
+
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Enter Email" })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-12"> <label for="pwd" style="float:left;">Password:</label></div>
+
+                            <div class="form-group col-md-12">
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Enter Password" })
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="checkbox">
+                                <div class="col-md-12">
+                                    <label style="float:left;"><input type="checkbox"> Remember me</label>
+                                </div>
+                            </div>
+                            <button type="submit" name="BtnLogin"  value="Login" class="btn btn-danger">Login</button>
+                            <button type="submit" name="BtnLogin" value="Cancel" class="btn btn-danger">Cancel</button>
+                        </form>
+                    </div>
+                </div>
+       }
